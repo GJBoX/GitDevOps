@@ -6,7 +6,7 @@ on:
     - main
     - develop
   pull_request:
-# testes tte tetset est set est
+
 jobs:
   test-backend: 
     runs-on: ubuntu-22.04
