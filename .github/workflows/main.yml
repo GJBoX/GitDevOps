@@ -26,3 +26,4 @@ jobs:
         working-directory: ./backend/simple-api-student/
         run: mvn clean verify 
         # --file ./backend/simple-api-student/pom.xml
+#fdfsf
