@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  backend:
+    build: ./backend
+    networks:
+      - app-network
+    depends_on:
+      - postgres
+
+  postgres:
+    build: ./postgres
+    networks:
+      - app-network
+
+  http:
+    build: ./http
+    ports:
+      - "80:80" 
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+networks:
+  app-network:
