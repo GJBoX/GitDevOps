@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
+          distribution: "temurine"
 
      #finally build your app with the latest command
       - name: Build and test with Maven
