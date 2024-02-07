@@ -1,0 +1,10 @@
+
+- name: Run Proxy Container
+  docker_container:
+    name: http
+    image: "theoahga/my-http:latest"
+    networks:
+      - name: myNetwork
+    ports: 
+     - 80:80
+

@@ -1,0 +1,11 @@
+
+- name: Run App Container
+  docker_container:
+    name: backend-advanced
+    image: "theoahga/my-backend:latest"
+    networks:
+      - name: myNetwork
+    env:
+      DBURL: "jdbc:postgresql://postgres:5432/postgres"
+      DBUSER: "postgres"
+      DBPWD: "postgres"

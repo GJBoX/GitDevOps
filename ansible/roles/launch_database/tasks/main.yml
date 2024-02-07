@@ -1,0 +1,7 @@
+
+- name: Run Database Container
+  docker_container:
+    name: postgres
+    image: "theoahga/my-database:latest"
+    networks:
+      - name: myNetwork
