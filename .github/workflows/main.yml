@@ -48,10 +48,10 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./postgres
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-database:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/postgres:latest
 
       - name: Build and push httpd image
         uses: docker/build-push-action@v3
         with:
           context: ./http
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/http:latest
