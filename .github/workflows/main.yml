@@ -38,11 +38,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2.5.0
 
-      # - name: Build and push backend image
-      #   uses: docker/build-push-action@v3
-      #   with:
-      #     context: ./backend
-      #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
+      - name: Build and push backend image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./backend
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
 
       - name: Build and push database image
         uses: docker/build-push-action@v3
