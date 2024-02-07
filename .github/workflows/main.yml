@@ -23,7 +23,7 @@ jobs:
 
      #finally build your app with the latest command
       - name: Build and test with Maven
-        run: /
+        run: |
               cd backend/simple-api-student
               mvn clean test
         # --file ./backend/simple-api-student/pom.xml
