@@ -44,7 +44,7 @@ build-and-push-docker-image:
    - name: Build image and push backend
      uses: docker/build-push-action@v3
      with:
-       context: ./backend/simple-api
+       context: ./backend
        tags:  ${{secrets.DOCKERHUB_USERNAME}}/backend:latest
 
    #- name: Build image and push database
