@@ -23,5 +23,6 @@ jobs:
 
      #finally build your app with the latest command
       - name: Build and test with Maven
-        # working-directory: ./backend/simple-api-student/
-        run: mvn clean verify --file ./backend/simple-api-student/pom.xml
+        working-directory: ./backend/simple-api-student/
+        run: mvn clean verify
+        # --file ./backend/simple-api-student/pom.xml
