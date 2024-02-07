@@ -3,8 +3,8 @@ name: CI devops 2023
 on:
   push:
     branches: 
-    - main
-    - develop
+      - main
+      - develop
   pull_request:
 
 jobs:
@@ -26,34 +26,32 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-     #finally vamoooos build your app with the latest command
       - name: Build and test with Maven
         run: |
-              cd backend/simple-api-student
-              mvn clean test
-        # --file ./backend/simple-api-student/pom.xml
+          cd backend/simple-api-student
+          mvn clean test
 
-  build-and-push-docker-image:
+  build-and-push-docker-images:
     needs: test-backend
     runs-on: ubuntu-22.04
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v2.5.0
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2.5.0
 
-        - name: Build image and push backend
-          uses: docker/build-push-action@v3
-          with:
-            context: ./backend
-            tags:  ${{secrets.DOCKERHUB_USERNAME}}/backend:latest
+      - name: Build and push backend image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./backend
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
 
-        - name: Build image and push database
-            uses: docker/build-push-action@v3
-            with:
-              context: ./postgres
-              tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-database:latest
-        
-        - name: Build image and push httpd
-          uses: docker/build-push-action@v3
-            with:
-              context: ./http
-              tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:latest
+      - name: Build and push database image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./postgres
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-database:latest
+
+      - name: Build and push httpd image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./http
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:latest
