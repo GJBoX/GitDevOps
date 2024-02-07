@@ -2,13 +2,13 @@ name: CI devops 2023
 
 on:
   push:
-    branches: 
+    branches:
       - main
       - develop
   pull_request:
 
 jobs:
-  test-backend: 
+  test-backend:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
