@@ -46,8 +46,14 @@ build-and-push-docker-image:
         context: ./backend
         tags:  ${{secrets.DOCKERHUB_USERNAME}}/backend:latest
 
-    #- name: Build image and push database
-        # DO the same for database
-
-    #- name: Build image and push httpd
-      # DO the same for httpd
+    - name: Build image and push database
+        uses: docker/build-push-action@v3
+        with:
+          context: ./postgres
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-database:latest
+    
+    - name: Build image and push httpd
+      uses: docker/build-push-action@v3
+        with:
+          context: ./http
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:latest
