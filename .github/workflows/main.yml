@@ -25,7 +25,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+#commit
       - name: Build and test with Maven
         run: mvn -B verify sonar:sonar -Dsonar.projectKey=gjbox -Dsonar.organization=gjbox -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./backend/simple-api-student/pom.xml
 
