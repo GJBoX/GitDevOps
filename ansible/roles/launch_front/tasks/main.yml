@@ -1,0 +1,10 @@
+
+- name: Run Front
+  docker_container:
+    name: front
+    image: "theoahga/my-front:latest"
+    networks:
+      - name: "{{ networkName }}"
+    ports: 
+     - 80:80
+
