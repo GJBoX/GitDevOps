@@ -29,7 +29,7 @@ jobs:
       - name: Build and test with Maven
         run: |
           cd backend/simple-api-student
-          mvn -B verify sonar:sonar -Dsonar.projectKey=gitdev -Dsonar.organization=gitdev -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
+          mvn -B verify sonar:sonar -Dsonar.projectKey=GJBoX_GitDevOps -Dsonar.organization=GJBoX -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./backend/simple-api/pom.xml
 
 
   build-and-push-docker-images:
