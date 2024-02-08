@@ -1,8 +1,7 @@
 all:
  vars:
-   ansible_user: centos
+   ansible_user: "{{ ansUSER }}"
    ansible_ssh_private_key_file: /id_rsa
  children:
    prod:
-     hosts: julien.buc.takima.cloud
-     
+     hosts: "{{ ansHOST }}" 

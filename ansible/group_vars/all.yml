@@ -1,0 +1,12 @@
+networkName : myNetwork
+
+dbURL: "jdbc:postgresql://postgres:5432/postgres"
+dbUSER: "postgres"
+dbPWD: "postgres"
+
+contDB : postgres
+contPROXY : http
+contAPP : backend-advanced
+
+ansUSER : centos
+ansHOST : julien.buc.takima.cloud

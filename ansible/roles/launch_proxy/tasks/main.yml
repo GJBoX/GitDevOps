@@ -1,10 +1,9 @@
 
 - name: Run Proxy Container
   docker_container:
-    name: http
+    name: "{{ contPROXY }}"
     image: "theoahga/my-http:latest"
     networks:
-      - name: myNetwork
+      - name: "{{ networkName }}"
     ports: 
      - 80:80
-
