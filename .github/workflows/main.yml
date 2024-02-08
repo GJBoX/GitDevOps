@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and test with Maven
-        run: mvn -B verify sonar:sonar -Dsonar.projectKey=GJBoX_GitDevOps -Dsonar.organization=Pollution74 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./backend/simple-api-student/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=gjbox -Dsonar.organization=gjbox -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./backend/simple-api-student/pom.xml
 
 
   build-and-push-docker-images:
